@@ -1,12 +1,13 @@
 import logging
 from optparse import Option
 
-from byteplus.core.constant import MAX_WRITE_ITEM_COUNT, MAX_IMPORT_ITEM_COUNT
-from byteplus.core.context import Param, Context
-from byteplus.core.exception import BizException
+from byteplus.core import MAX_WRITE_ITEM_COUNT, MAX_IMPORT_ITEM_COUNT
+from byteplus.core import BizException
+from byteplus.core import Region
+from byteplus.core.context import Context, Param
 from byteplus.core.http_caller import HttpCaller
-from byteplus.retail.protocol.byteplus_retail_pb2 import *
-from byteplus.retail.retail_url import _RetailURL
+from byteplus.retail.protocol import *
+from byteplus.retail.url import _RetailURL
 
 log = logging.getLogger(__name__)
 
@@ -14,7 +15,7 @@ _TOO_MANY_WRITE_ITEMS_ERR_MSG = "Only can receive %d items in one write request"
 _TOO_MANY_IMPORT_ITEMS_ERR_MSG = "Only can receive %d items in one import request".format(MAX_IMPORT_ITEM_COUNT)
 
 
-class RetailClient(object):
+class Client(object):
 
     def __init__(self, param: Param):
         context: Context = Context(param)
@@ -104,3 +105,39 @@ class RetailClient(object):
         self._http_caller.do_request(url, request, response, *opts)
         log.debug("[ByteplusSDK][AckImpressions] rsp:\n%s", response)
         return response
+
+
+class ClientBuilder(object):
+    def __init__(self):
+        self._param = Param()
+
+    def tenant(self, tenant: str):
+        self._param.tenant = tenant
+        return self
+
+    def tenant_id(self, tenant_id: str):
+        self._param.tenant_id = tenant_id
+        return self
+
+    def token(self, token: str):
+        self._param.token = token
+        return self
+
+    def schema(self, schema: str):
+        self._param.schema = schema
+        return self
+
+    def hosts(self, hosts: list):
+        self._param.hosts = hosts
+        return self
+
+    def headers(self, headers: dict):
+        self._param.headers = headers
+        return self
+
+    def region(self, region: Region):
+        self._param.region = region
+        return self
+
+    def build(self) -> Client:
+        return Client(self._param)

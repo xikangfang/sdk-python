@@ -1,5 +1,3 @@
-import logging
-
 from byteplus.core.context import Context
 from byteplus.core.host_availabler import HostAvailabler
 from byteplus.core.url_center import URLCenter
