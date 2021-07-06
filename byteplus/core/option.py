@@ -39,3 +39,27 @@ class Option(object):
                 options.headers = headers
 
         return OptionImpl()
+
+    @staticmethod
+    def with_data_date(date: datetime):
+        class OptionImpl(Option):
+            def fill(self, options: _Options) -> None:
+                options.data_date = date
+
+        return OptionImpl()
+
+    @staticmethod
+    def with_data_end(end: bool):
+        class OptionImpl(Option):
+            def fill(self, options: _Options) -> None:
+                options.date_end = end
+
+        return OptionImpl()
+
+    @staticmethod
+    def with_server_timeout(timeout: datetime.timedelta):
+        class OptionImpl(Option):
+            def fill(self, options: _Options) -> None:
+                options.server_timeout = timeout
+
+        return OptionImpl()

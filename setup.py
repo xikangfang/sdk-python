@@ -54,6 +54,6 @@ setup(
     ],
     project_urls={
         'Documentation': 'https://docs.byteplus.com',
-        'Source': 'https://github.com/byte-plus/sdk-python',
+        'Source': 'https://github.com/byteplus-sdk/sdk-python',
     },
 )

@@ -1,10 +1,9 @@
 from datetime import timedelta, datetime, timezone
 
 
-def format_timedelta(delta: timedelta) -> str:
-    milliseconds = int(delta.total_seconds() * 1000)
-    return str(milliseconds) + "ms"
-
-
-def conv_to_rcf3339(dt: datetime):
+def rfc3339_format(dt: datetime) -> str:
     return dt.astimezone(timezone.utc).isoformat()
+
+
+def milliseconds(delta: timedelta) -> int:
+    return int(delta.total_seconds() * 1000.0)

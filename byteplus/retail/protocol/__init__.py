@@ -1,11 +1,4 @@
 from .byteplus_retail_pb2 import (
-    Status,
-    Metadata,
-    Operation,
-    OperationResponse,
-    GetOperationRequest,
-    ListOperationsRequest,
-    ListOperationsResponse,
     User,
     WriteUsersRequest,
     UserError,

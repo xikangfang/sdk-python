@@ -10,343 +10,19 @@ from google.protobuf import symbol_database as _symbol_database
 
 _sym_db = _symbol_database.Default()
 
-
-from google.protobuf import any_pb2 as google_dot_protobuf_dot_any__pb2
-
+from byteplus.common.protocol import byteplus_common_pb2 as byteplus__common__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='byteplus_retail.proto',
   package='bytedance.byteplus.retail',
   syntax='proto3',
-  serialized_options=None,
+  serialized_options=b'\n\034byteplus.sdk.retail.protocolZ.github.com/byteplus-sdk/sdk-go/retail/protocol',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x15\x62yteplus_retail.proto\x12\x19\x62ytedance.byteplus.retail\x1a\x19google/protobuf/any.proto\"\'\n\x06Status\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\"\x85\x01\n\x08Metadata\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12\x13\n\x0btotal_count\x18\x02 \x01(\x03\x12\x15\n\rsuccess_count\x18\x03 \x01(\x03\x12\x15\n\rfailure_count\x18\x04 \x01(\x03\x12\x13\n\x0bsubmit_time\x18\x05 \x01(\t\x12\x13\n\x0bupdate_time\x18\x06 \x01(\t\"\x86\x01\n\tOperation\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x35\n\x08metadata\x18\x02 \x01(\x0b\x32#.bytedance.byteplus.retail.Metadata\x12\x0c\n\x04\x64one\x18\x03 \x01(\x08\x12&\n\x08response\x18\x04 \x01(\x0b\x32\x14.google.protobuf.Any\"\x7f\n\x11OperationResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.retail.Status\x12\x37\n\toperation\x18\x02 \x01(\x0b\x32$.bytedance.byteplus.retail.Operation\"#\n\x13GetOperationRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"N\n\x15ListOperationsRequest\x12\x0e\n\x06\x66ilter\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x9e\x01\n\x16ListOperationsResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.retail.Status\x12\x38\n\noperations\x18\x02 \x03(\x0b\x32$.bytedance.byteplus.retail.Operation\x12\x17\n\x0fnext_page_token\x18\x03 \x01(\t\"\x94\x03\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0e\n\x06gender\x18\x02 \x01(\t\x12\x0b\n\x03\x61ge\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\x12\x1a\n\x12\x61\x63tivation_channel\x18\x05 \x01(\t\x12\x18\n\x10membership_level\x18\x06 \x01(\t\x12\x1e\n\x16registration_timestamp\x18\x07 \x01(\x03\x12:\n\x08location\x18\x08 \x01(\x0b\x32(.bytedance.byteplus.retail.User.Location\x12\x39\n\x05\x65xtra\x18\x64 \x03(\x0b\x32*.bytedance.byteplus.retail.User.ExtraEntry\x1aU\n\x08Location\x12\x0f\n\x07\x63ountry\x18\x01 \x01(\t\x12\x0c\n\x04\x63ity\x18\x02 \x01(\t\x12\x18\n\x10\x64istrict_or_area\x18\x03 \x01(\t\x12\x10\n\x08postcode\x18\x04 \x01(\t\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb9\x01\n\x11WriteUsersRequest\x12.\n\x05users\x18\x01 \x03(\x0b\x32\x1f.bytedance.byteplus.retail.User\x12\x46\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x37.bytedance.byteplus.retail.WriteUsersRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"K\n\tUserError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12-\n\x04user\x18\x02 \x01(\x0b\x32\x1f.bytedance.byteplus.retail.User\"}\n\x12WriteUsersResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.retail.Status\x12\x34\n\x06\x65rrors\x18\x02 \x03(\x0b\x32$.bytedance.byteplus.retail.UserError\"C\n\x11UsersInlineSource\x12.\n\x05users\x18\x01 \x03(\x0b\x32\x1f.bytedance.byteplus.retail.User\"i\n\x10UsersInputConfig\x12K\n\x13users_inline_source\x18\x01 \x01(\x0b\x32,.bytedance.byteplus.retail.UsersInlineSourceH\x00\x42\x08\n\x06source\"*\n\nDateConfig\x12\x0c\n\x04\x64\x61te\x18\x02 \x01(\t\x12\x0e\n\x06is_end\x18\x03 \x01(\x08\"@\n\x12ImportErrorsConfig\x12\x1b\n\x11\x65mpty_destination\x18\x01 \x01(\tH\x00\x42\r\n\x0b\x64\x65stination\"\xd0\x02\n\x12ImportUsersRequest\x12\x41\n\x0cinput_config\x18\x01 \x01(\x0b\x32+.bytedance.byteplus.retail.UsersInputConfig\x12:\n\x0b\x64\x61te_config\x18\x02 \x01(\x0b\x32%.bytedance.byteplus.retail.DateConfig\x12\x44\n\rerrors_config\x18\x03 \x01(\x0b\x32-.bytedance.byteplus.retail.ImportErrorsConfig\x12G\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x38.bytedance.byteplus.retail.ImportUsersRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x85\x01\n\x13ImportUsersResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.retail.Status\x12;\n\rerror_samples\x18\x02 \x03(\x0b\x32$.bytedance.byteplus.retail.UserError\"\xa1\t\n\x07Product\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12?\n\ncategories\x18\x02 \x03(\x0b\x32+.bytedance.byteplus.retail.Product.Category\x12\x38\n\x06\x62rands\x18\x03 \x03(\x0b\x32(.bytedance.byteplus.retail.Product.Brand\x12\x37\n\x05price\x18\x04 \x01(\x0b\x32(.bytedance.byteplus.retail.Product.Price\x12\x18\n\x10is_recommendable\x18\x05 \x01(\x08\x12\r\n\x05title\x18\x06 \x01(\t\x12\x15\n\rquality_score\x18\x07 \x01(\x01\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12;\n\x07\x64isplay\x18\t \x01(\x0b\x32*.bytedance.byteplus.retail.Product.Display\x12\x44\n\x0cproduct_spec\x18\n \x01(\x0b\x32..bytedance.byteplus.retail.Product.ProductSpec\x12\x39\n\x06seller\x18\x0b \x01(\x0b\x32).bytedance.byteplus.retail.Product.Seller\x12<\n\x05\x65xtra\x18\x64 \x03(\x0b\x32-.bytedance.byteplus.retail.Product.ExtraEntry\x1a\x98\x01\n\x08\x43\x61tegory\x12\x16\n\x0e\x63\x61tegory_depth\x18\x01 \x01(\x05\x12P\n\x0e\x63\x61tegory_nodes\x18\x02 \x03(\x0b\x32\x38.bytedance.byteplus.retail.Product.Category.CategoryNode\x1a\"\n\x0c\x43\x61tegoryNode\x12\x12\n\nid_or_name\x18\x01 \x01(\t\x1a\x30\n\x05\x42rand\x12\x13\n\x0b\x62rand_depth\x18\x01 \x01(\x05\x12\x12\n\nid_or_name\x18\x02 \x01(\t\x1a\x34\n\x05Price\x12\x15\n\rcurrent_price\x18\x01 \x01(\x03\x12\x14\n\x0corigin_price\x18\x02 \x01(\x03\x1a\x8f\x01\n\x07\x44isplay\x12!\n\x19listing_page_display_tags\x18\x01 \x03(\t\x12 \n\x18\x64\x65tail_page_display_tags\x18\x02 \x03(\t\x12!\n\x19listing_page_display_type\x18\x03 \x01(\t\x12\x1c\n\x14\x63over_multimedia_url\x18\x04 \x01(\t\x1a~\n\x0bProductSpec\x12\x18\n\x10product_group_id\x18\x01 \x01(\t\x12\x13\n\x0buser_rating\x18\x02 \x01(\x01\x12\x15\n\rcomment_count\x18\x03 \x01(\x05\x12\x0e\n\x06source\x18\x04 \x01(\t\x12\x19\n\x11publish_timestamp\x18\x05 \x01(\x03\x1a\x41\n\x06Seller\x12\n\n\x02id\x18\x01 \x01(\t\x12\x14\n\x0cseller_level\x18\x02 \x01(\t\x12\x15\n\rseller_rating\x18\x03 \x01(\x01\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc5\x01\n\x14WriteProductsRequest\x12\x34\n\x08products\x18\x01 \x03(\x0b\x32\".bytedance.byteplus.retail.Product\x12I\n\x05\x65xtra\x18\x64 \x03(\x0b\x32:.bytedance.byteplus.retail.WriteProductsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"T\n\x0cProductError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x33\n\x07product\x18\x02 \x01(\x0b\x32\".bytedance.byteplus.retail.Product\"\x83\x01\n\x15WriteProductsResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.retail.Status\x12\x37\n\x06\x65rrors\x18\x02 \x03(\x0b\x32\'.bytedance.byteplus.retail.ProductError\"L\n\x14ProductsInlineSource\x12\x34\n\x08products\x18\x01 \x03(\x0b\x32\".bytedance.byteplus.retail.Product\"r\n\x13ProductsInputConfig\x12Q\n\x16products_inline_source\x18\x01 \x01(\x0b\x32/.bytedance.byteplus.retail.ProductsInlineSourceH\x00\x42\x08\n\x06source\"\xd9\x02\n\x15ImportProductsRequest\x12\x44\n\x0cinput_config\x18\x01 \x01(\x0b\x32..bytedance.byteplus.retail.ProductsInputConfig\x12:\n\x0b\x64\x61te_config\x18\x02 \x01(\x0b\x32%.bytedance.byteplus.retail.DateConfig\x12\x44\n\rerrors_config\x18\x03 \x01(\x0b\x32-.bytedance.byteplus.retail.ImportErrorsConfig\x12J\n\x05\x65xtra\x18\x64 \x03(\x0b\x32;.bytedance.byteplus.retail.ImportProductsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x8b\x01\n\x16ImportProductsResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.retail.Status\x12>\n\rerror_samples\x18\x02 \x03(\x0b\x32\'.bytedance.byteplus.retail.ProductError\"\xb1\x06\n\tUserEvent\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x12\n\nevent_type\x18\x02 \x01(\t\x12\x17\n\x0f\x65vent_timestamp\x18\x03 \x01(\x03\x12\x39\n\x05scene\x18\x04 \x01(\x0b\x32*.bytedance.byteplus.retail.UserEvent.Scene\x12\x12\n\nproduct_id\x18\x05 \x01(\t\x12;\n\x06\x64\x65vice\x18\x06 \x01(\x0b\x32+.bytedance.byteplus.retail.UserEvent.Device\x12=\n\x07\x63ontext\x18\x07 \x01(\x0b\x32,.bytedance.byteplus.retail.UserEvent.Context\x12\x19\n\x11\x61ttribution_token\x18\x08 \x01(\t\x12\x10\n\x08rec_info\x18\t \x01(\t\x12\x16\n\x0etraffic_source\x18\n \x01(\t\x12\x16\n\x0epurchase_count\x18\x0b \x01(\x05\x12\x1d\n\x15\x64\x65tail_page_stay_time\x18\x0c \x01(\x05\x12>\n\x05\x65xtra\x18\x64 \x03(\x0b\x32/.bytedance.byteplus.retail.UserEvent.ExtraEntry\x1a@\n\x05Scene\x12\x12\n\nscene_name\x18\x01 \x01(\t\x12\x13\n\x0bpage_number\x18\x02 \x01(\x05\x12\x0e\n\x06offset\x18\x03 \x01(\x05\x1a\xbb\x01\n\x06\x44\x65vice\x12\x10\n\x08platform\x18\x01 \x01(\t\x12\x0f\n\x07os_type\x18\x02 \x01(\t\x12\x13\n\x0b\x61pp_version\x18\x03 \x01(\t\x12\x14\n\x0c\x64\x65vice_model\x18\x04 \x01(\t\x12\x14\n\x0c\x64\x65vice_brand\x18\x05 \x01(\t\x12\x12\n\nos_version\x18\x06 \x01(\t\x12\x14\n\x0c\x62rowser_type\x18\x07 \x01(\t\x12\x12\n\nuser_agent\x18\x08 \x01(\t\x12\x0f\n\x07network\x18\t \x01(\t\x1a\x31\n\x07\x43ontext\x12\r\n\x05query\x18\x01 \x01(\t\x12\x17\n\x0froot_product_id\x18\x02 \x01(\t\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xce\x01\n\x16WriteUserEventsRequest\x12\x39\n\x0buser_events\x18\x01 \x03(\x0b\x32$.bytedance.byteplus.retail.UserEvent\x12K\n\x05\x65xtra\x18\x64 \x03(\x0b\x32<.bytedance.byteplus.retail.WriteUserEventsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"[\n\x0eUserEventError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x38\n\nuser_event\x18\x02 \x01(\x0b\x32$.bytedance.byteplus.retail.UserEvent\"\x87\x01\n\x17WriteUserEventsResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.retail.Status\x12\x39\n\x06\x65rrors\x18\x02 \x03(\x0b\x32).bytedance.byteplus.retail.UserEventError\"S\n\x16UserEventsInlineSource\x12\x39\n\x0buser_events\x18\x01 \x03(\x0b\x32$.bytedance.byteplus.retail.UserEvent\"y\n\x15UserEventsInputConfig\x12V\n\x19user_events_inline_source\x18\x01 \x01(\x0b\x32\x31.bytedance.byteplus.retail.UserEventsInlineSourceH\x00\x42\x08\n\x06source\"\xdf\x02\n\x17ImportUserEventsRequest\x12\x46\n\x0cinput_config\x18\x01 \x01(\x0b\x32\x30.bytedance.byteplus.retail.UserEventsInputConfig\x12:\n\x0b\x64\x61te_config\x18\x02 \x01(\x0b\x32%.bytedance.byteplus.retail.DateConfig\x12\x44\n\rerrors_config\x18\x03 \x01(\x0b\x32-.bytedance.byteplus.retail.ImportErrorsConfig\x12L\n\x05\x65xtra\x18\x64 \x03(\x0b\x32=.bytedance.byteplus.retail.ImportUserEventsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x8f\x01\n\x18ImportUserEventsResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.retail.Status\x12@\n\rerror_samples\x18\x02 \x03(\x0b\x32).bytedance.byteplus.retail.UserEventError\"\xc3\x03\n\x0ePredictRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04size\x18\x02 \x01(\x05\x12\x39\n\x05scene\x18\x03 \x01(\x0b\x32*.bytedance.byteplus.retail.UserEvent.Scene\x12\x42\n\x07\x63ontext\x18\x04 \x01(\x0b\x32\x31.bytedance.byteplus.retail.PredictRequest.Context\x12\x43\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x34.bytedance.byteplus.retail.PredictRequest.ExtraEntry\x1a\x9f\x01\n\x07\x43ontext\x12\x38\n\x0croot_product\x18\x01 \x01(\x0b\x32\".bytedance.byteplus.retail.Product\x12;\n\x06\x64\x65vice\x18\x02 \x01(\x0b\x32+.bytedance.byteplus.retail.UserEvent.Device\x12\x1d\n\x15\x63\x61ndidate_product_ids\x18\x03 \x03(\t\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xbc\x03\n\rPredictResult\x12S\n\x11response_products\x18\x01 \x03(\x0b\x32\x38.bytedance.byteplus.retail.PredictResult.ResponseProduct\x12\x42\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x33.bytedance.byteplus.retail.PredictResult.ExtraEntry\x1a\xe3\x01\n\x0fResponseProduct\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x0c\n\x04rank\x18\x02 \x01(\x05\x12\x0c\n\x04pctr\x18\x03 \x01(\x01\x12\x0c\n\x04pcvr\x18\x04 \x01(\x01\x12\x10\n\x08rec_info\x18\x05 \x01(\t\x12R\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x43.bytedance.byteplus.retail.PredictResult.ResponseProduct.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x91\x01\n\x0fPredictResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.retail.Status\x12\x12\n\nrequest_id\x18\x02 \x01(\t\x12\x37\n\x05value\x18\x03 \x01(\x0b\x32(.bytedance.byteplus.retail.PredictResult\"\xca\x02\n\x1b\x41\x63kServerImpressionsRequest\x12\x1a\n\x12predict_request_id\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\x12\x16\n\x0etraffic_source\x18\x03 \x01(\t\x12\x39\n\x05scene\x18\x04 \x01(\x0b\x32*.bytedance.byteplus.retail.UserEvent.Scene\x12_\n\x10\x61ltered_products\x18\x05 \x03(\x0b\x32\x45.bytedance.byteplus.retail.AckServerImpressionsRequest.AlteredProduct\x1aJ\n\x0e\x41lteredProduct\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x16\n\x0e\x61ltered_reason\x18\x02 \x01(\t\x12\x0c\n\x04rank\x18\x03 \x01(\x05\"Q\n\x1c\x41\x63kServerImpressionsResponse\x12\x31\n\x06status\x18\x01 \x01(\x0b\x32!.bytedance.byteplus.retail.Status2\x95\t\n\x15\x42ytePlusRetailService\x12i\n\nWriteUsers\x12,.bytedance.byteplus.retail.WriteUsersRequest\x1a-.bytedance.byteplus.retail.WriteUsersResponse\x12j\n\x0bImportUsers\x12-.bytedance.byteplus.retail.ImportUsersRequest\x1a,.bytedance.byteplus.retail.OperationResponse\x12r\n\rWriteProducts\x12/.bytedance.byteplus.retail.WriteProductsRequest\x1a\x30.bytedance.byteplus.retail.WriteProductsResponse\x12p\n\x0eImportProducts\x12\x30.bytedance.byteplus.retail.ImportProductsRequest\x1a,.bytedance.byteplus.retail.OperationResponse\x12x\n\x0fWriteUserEvents\x12\x31.bytedance.byteplus.retail.WriteUserEventsRequest\x1a\x32.bytedance.byteplus.retail.WriteUserEventsResponse\x12t\n\x10ImportUserEvents\x12\x32.bytedance.byteplus.retail.ImportUserEventsRequest\x1a,.bytedance.byteplus.retail.OperationResponse\x12l\n\x0cGetOperation\x12..bytedance.byteplus.retail.GetOperationRequest\x1a,.bytedance.byteplus.retail.OperationResponse\x12u\n\x0eListOperations\x12\x30.bytedance.byteplus.retail.ListOperationsRequest\x1a\x31.bytedance.byteplus.retail.ListOperationsResponse\x12`\n\x07Predict\x12).bytedance.byteplus.retail.PredictRequest\x1a*.bytedance.byteplus.retail.PredictResponse\x12\x87\x01\n\x14\x41\x63kServerImpressions\x12\x36.bytedance.byteplus.retail.AckServerImpressionsRequest\x1a\x37.bytedance.byteplus.retail.AckServerImpressionsResponseb\x06proto3'
+  serialized_pb=b'\n\x15\x62yteplus_retail.proto\x12\x19\x62ytedance.byteplus.retail\x1a\x15\x62yteplus_common.proto\"\x94\x03\n\x04User\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0e\n\x06gender\x18\x02 \x01(\t\x12\x0b\n\x03\x61ge\x18\x03 \x01(\t\x12\x0c\n\x04tags\x18\x04 \x03(\t\x12\x1a\n\x12\x61\x63tivation_channel\x18\x05 \x01(\t\x12\x18\n\x10membership_level\x18\x06 \x01(\t\x12\x1e\n\x16registration_timestamp\x18\x07 \x01(\x03\x12:\n\x08location\x18\x08 \x01(\x0b\x32(.bytedance.byteplus.retail.User.Location\x12\x39\n\x05\x65xtra\x18\x64 \x03(\x0b\x32*.bytedance.byteplus.retail.User.ExtraEntry\x1aU\n\x08Location\x12\x0f\n\x07\x63ountry\x18\x01 \x01(\t\x12\x0c\n\x04\x63ity\x18\x02 \x01(\t\x12\x18\n\x10\x64istrict_or_area\x18\x03 \x01(\t\x12\x10\n\x08postcode\x18\x04 \x01(\t\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb9\x01\n\x11WriteUsersRequest\x12.\n\x05users\x18\x01 \x03(\x0b\x32\x1f.bytedance.byteplus.retail.User\x12\x46\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x37.bytedance.byteplus.retail.WriteUsersRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"K\n\tUserError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12-\n\x04user\x18\x02 \x01(\x0b\x32\x1f.bytedance.byteplus.retail.User\"v\n\x12WriteUsersResponse\x12*\n\x06status\x18\x01 \x01(\x0b\x32\x1a.bytedance.byteplus.Status\x12\x34\n\x06\x65rrors\x18\x02 \x03(\x0b\x32$.bytedance.byteplus.retail.UserError\"C\n\x11UsersInlineSource\x12.\n\x05users\x18\x01 \x03(\x0b\x32\x1f.bytedance.byteplus.retail.User\"i\n\x10UsersInputConfig\x12K\n\x13users_inline_source\x18\x01 \x01(\x0b\x32,.bytedance.byteplus.retail.UsersInlineSourceH\x00\x42\x08\n\x06source\"*\n\nDateConfig\x12\x0c\n\x04\x64\x61te\x18\x02 \x01(\t\x12\x0e\n\x06is_end\x18\x03 \x01(\x08\"@\n\x12ImportErrorsConfig\x12\x1b\n\x11\x65mpty_destination\x18\x01 \x01(\tH\x00\x42\r\n\x0b\x64\x65stination\"\xd0\x02\n\x12ImportUsersRequest\x12\x41\n\x0cinput_config\x18\x01 \x01(\x0b\x32+.bytedance.byteplus.retail.UsersInputConfig\x12:\n\x0b\x64\x61te_config\x18\x02 \x01(\x0b\x32%.bytedance.byteplus.retail.DateConfig\x12\x44\n\rerrors_config\x18\x03 \x01(\x0b\x32-.bytedance.byteplus.retail.ImportErrorsConfig\x12G\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x38.bytedance.byteplus.retail.ImportUsersRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"~\n\x13ImportUsersResponse\x12*\n\x06status\x18\x01 \x01(\x0b\x32\x1a.bytedance.byteplus.Status\x12;\n\rerror_samples\x18\x02 \x03(\x0b\x32$.bytedance.byteplus.retail.UserError\"\xa1\t\n\x07Product\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12?\n\ncategories\x18\x02 \x03(\x0b\x32+.bytedance.byteplus.retail.Product.Category\x12\x38\n\x06\x62rands\x18\x03 \x03(\x0b\x32(.bytedance.byteplus.retail.Product.Brand\x12\x37\n\x05price\x18\x04 \x01(\x0b\x32(.bytedance.byteplus.retail.Product.Price\x12\x18\n\x10is_recommendable\x18\x05 \x01(\x08\x12\r\n\x05title\x18\x06 \x01(\t\x12\x15\n\rquality_score\x18\x07 \x01(\x01\x12\x0c\n\x04tags\x18\x08 \x03(\t\x12;\n\x07\x64isplay\x18\t \x01(\x0b\x32*.bytedance.byteplus.retail.Product.Display\x12\x44\n\x0cproduct_spec\x18\n \x01(\x0b\x32..bytedance.byteplus.retail.Product.ProductSpec\x12\x39\n\x06seller\x18\x0b \x01(\x0b\x32).bytedance.byteplus.retail.Product.Seller\x12<\n\x05\x65xtra\x18\x64 \x03(\x0b\x32-.bytedance.byteplus.retail.Product.ExtraEntry\x1a\x98\x01\n\x08\x43\x61tegory\x12\x16\n\x0e\x63\x61tegory_depth\x18\x01 \x01(\x05\x12P\n\x0e\x63\x61tegory_nodes\x18\x02 \x03(\x0b\x32\x38.bytedance.byteplus.retail.Product.Category.CategoryNode\x1a\"\n\x0c\x43\x61tegoryNode\x12\x12\n\nid_or_name\x18\x01 \x01(\t\x1a\x30\n\x05\x42rand\x12\x13\n\x0b\x62rand_depth\x18\x01 \x01(\x05\x12\x12\n\nid_or_name\x18\x02 \x01(\t\x1a\x34\n\x05Price\x12\x15\n\rcurrent_price\x18\x01 \x01(\x03\x12\x14\n\x0corigin_price\x18\x02 \x01(\x03\x1a\x8f\x01\n\x07\x44isplay\x12!\n\x19listing_page_display_tags\x18\x01 \x03(\t\x12 \n\x18\x64\x65tail_page_display_tags\x18\x02 \x03(\t\x12!\n\x19listing_page_display_type\x18\x03 \x01(\t\x12\x1c\n\x14\x63over_multimedia_url\x18\x04 \x01(\t\x1a~\n\x0bProductSpec\x12\x18\n\x10product_group_id\x18\x01 \x01(\t\x12\x13\n\x0buser_rating\x18\x02 \x01(\x01\x12\x15\n\rcomment_count\x18\x03 \x01(\x05\x12\x0e\n\x06source\x18\x04 \x01(\t\x12\x19\n\x11publish_timestamp\x18\x05 \x01(\x03\x1a\x41\n\x06Seller\x12\n\n\x02id\x18\x01 \x01(\t\x12\x14\n\x0cseller_level\x18\x02 \x01(\t\x12\x15\n\rseller_rating\x18\x03 \x01(\x01\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc5\x01\n\x14WriteProductsRequest\x12\x34\n\x08products\x18\x01 \x03(\x0b\x32\".bytedance.byteplus.retail.Product\x12I\n\x05\x65xtra\x18\x64 \x03(\x0b\x32:.bytedance.byteplus.retail.WriteProductsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"T\n\x0cProductError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x33\n\x07product\x18\x02 \x01(\x0b\x32\".bytedance.byteplus.retail.Product\"|\n\x15WriteProductsResponse\x12*\n\x06status\x18\x01 \x01(\x0b\x32\x1a.bytedance.byteplus.Status\x12\x37\n\x06\x65rrors\x18\x02 \x03(\x0b\x32\'.bytedance.byteplus.retail.ProductError\"L\n\x14ProductsInlineSource\x12\x34\n\x08products\x18\x01 \x03(\x0b\x32\".bytedance.byteplus.retail.Product\"r\n\x13ProductsInputConfig\x12Q\n\x16products_inline_source\x18\x01 \x01(\x0b\x32/.bytedance.byteplus.retail.ProductsInlineSourceH\x00\x42\x08\n\x06source\"\xd9\x02\n\x15ImportProductsRequest\x12\x44\n\x0cinput_config\x18\x01 \x01(\x0b\x32..bytedance.byteplus.retail.ProductsInputConfig\x12:\n\x0b\x64\x61te_config\x18\x02 \x01(\x0b\x32%.bytedance.byteplus.retail.DateConfig\x12\x44\n\rerrors_config\x18\x03 \x01(\x0b\x32-.bytedance.byteplus.retail.ImportErrorsConfig\x12J\n\x05\x65xtra\x18\x64 \x03(\x0b\x32;.bytedance.byteplus.retail.ImportProductsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x84\x01\n\x16ImportProductsResponse\x12*\n\x06status\x18\x01 \x01(\x0b\x32\x1a.bytedance.byteplus.Status\x12>\n\rerror_samples\x18\x02 \x03(\x0b\x32\'.bytedance.byteplus.retail.ProductError\"\xb1\x06\n\tUserEvent\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x12\n\nevent_type\x18\x02 \x01(\t\x12\x17\n\x0f\x65vent_timestamp\x18\x03 \x01(\x03\x12\x39\n\x05scene\x18\x04 \x01(\x0b\x32*.bytedance.byteplus.retail.UserEvent.Scene\x12\x12\n\nproduct_id\x18\x05 \x01(\t\x12;\n\x06\x64\x65vice\x18\x06 \x01(\x0b\x32+.bytedance.byteplus.retail.UserEvent.Device\x12=\n\x07\x63ontext\x18\x07 \x01(\x0b\x32,.bytedance.byteplus.retail.UserEvent.Context\x12\x19\n\x11\x61ttribution_token\x18\x08 \x01(\t\x12\x10\n\x08rec_info\x18\t \x01(\t\x12\x16\n\x0etraffic_source\x18\n \x01(\t\x12\x16\n\x0epurchase_count\x18\x0b \x01(\x05\x12\x1d\n\x15\x64\x65tail_page_stay_time\x18\x0c \x01(\x05\x12>\n\x05\x65xtra\x18\x64 \x03(\x0b\x32/.bytedance.byteplus.retail.UserEvent.ExtraEntry\x1a@\n\x05Scene\x12\x12\n\nscene_name\x18\x01 \x01(\t\x12\x13\n\x0bpage_number\x18\x02 \x01(\x05\x12\x0e\n\x06offset\x18\x03 \x01(\x05\x1a\xbb\x01\n\x06\x44\x65vice\x12\x10\n\x08platform\x18\x01 \x01(\t\x12\x0f\n\x07os_type\x18\x02 \x01(\t\x12\x13\n\x0b\x61pp_version\x18\x03 \x01(\t\x12\x14\n\x0c\x64\x65vice_model\x18\x04 \x01(\t\x12\x14\n\x0c\x64\x65vice_brand\x18\x05 \x01(\t\x12\x12\n\nos_version\x18\x06 \x01(\t\x12\x14\n\x0c\x62rowser_type\x18\x07 \x01(\t\x12\x12\n\nuser_agent\x18\x08 \x01(\t\x12\x0f\n\x07network\x18\t \x01(\t\x1a\x31\n\x07\x43ontext\x12\r\n\x05query\x18\x01 \x01(\t\x12\x17\n\x0froot_product_id\x18\x02 \x01(\t\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xce\x01\n\x16WriteUserEventsRequest\x12\x39\n\x0buser_events\x18\x01 \x03(\x0b\x32$.bytedance.byteplus.retail.UserEvent\x12K\n\x05\x65xtra\x18\x64 \x03(\x0b\x32<.bytedance.byteplus.retail.WriteUserEventsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"[\n\x0eUserEventError\x12\x0f\n\x07message\x18\x01 \x01(\t\x12\x38\n\nuser_event\x18\x02 \x01(\x0b\x32$.bytedance.byteplus.retail.UserEvent\"\x80\x01\n\x17WriteUserEventsResponse\x12*\n\x06status\x18\x01 \x01(\x0b\x32\x1a.bytedance.byteplus.Status\x12\x39\n\x06\x65rrors\x18\x02 \x03(\x0b\x32).bytedance.byteplus.retail.UserEventError\"S\n\x16UserEventsInlineSource\x12\x39\n\x0buser_events\x18\x01 \x03(\x0b\x32$.bytedance.byteplus.retail.UserEvent\"y\n\x15UserEventsInputConfig\x12V\n\x19user_events_inline_source\x18\x01 \x01(\x0b\x32\x31.bytedance.byteplus.retail.UserEventsInlineSourceH\x00\x42\x08\n\x06source\"\xdf\x02\n\x17ImportUserEventsRequest\x12\x46\n\x0cinput_config\x18\x01 \x01(\x0b\x32\x30.bytedance.byteplus.retail.UserEventsInputConfig\x12:\n\x0b\x64\x61te_config\x18\x02 \x01(\x0b\x32%.bytedance.byteplus.retail.DateConfig\x12\x44\n\rerrors_config\x18\x03 \x01(\x0b\x32-.bytedance.byteplus.retail.ImportErrorsConfig\x12L\n\x05\x65xtra\x18\x64 \x03(\x0b\x32=.bytedance.byteplus.retail.ImportUserEventsRequest.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x88\x01\n\x18ImportUserEventsResponse\x12*\n\x06status\x18\x01 \x01(\x0b\x32\x1a.bytedance.byteplus.Status\x12@\n\rerror_samples\x18\x02 \x03(\x0b\x32).bytedance.byteplus.retail.UserEventError\"\xc3\x03\n\x0ePredictRequest\x12\x0f\n\x07user_id\x18\x01 \x01(\t\x12\x0c\n\x04size\x18\x02 \x01(\x05\x12\x39\n\x05scene\x18\x03 \x01(\x0b\x32*.bytedance.byteplus.retail.UserEvent.Scene\x12\x42\n\x07\x63ontext\x18\x04 \x01(\x0b\x32\x31.bytedance.byteplus.retail.PredictRequest.Context\x12\x43\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x34.bytedance.byteplus.retail.PredictRequest.ExtraEntry\x1a\x9f\x01\n\x07\x43ontext\x12\x38\n\x0croot_product\x18\x01 \x01(\x0b\x32\".bytedance.byteplus.retail.Product\x12;\n\x06\x64\x65vice\x18\x02 \x01(\x0b\x32+.bytedance.byteplus.retail.UserEvent.Device\x12\x1d\n\x15\x63\x61ndidate_product_ids\x18\x03 \x03(\t\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xbc\x03\n\rPredictResult\x12S\n\x11response_products\x18\x01 \x03(\x0b\x32\x38.bytedance.byteplus.retail.PredictResult.ResponseProduct\x12\x42\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x33.bytedance.byteplus.retail.PredictResult.ExtraEntry\x1a\xe3\x01\n\x0fResponseProduct\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x0c\n\x04rank\x18\x02 \x01(\x05\x12\x0c\n\x04pctr\x18\x03 \x01(\x01\x12\x0c\n\x04pcvr\x18\x04 \x01(\x01\x12\x10\n\x08rec_info\x18\x05 \x01(\t\x12R\n\x05\x65xtra\x18\x64 \x03(\x0b\x32\x43.bytedance.byteplus.retail.PredictResult.ResponseProduct.ExtraEntry\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a,\n\nExtraEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x8a\x01\n\x0fPredictResponse\x12*\n\x06status\x18\x01 \x01(\x0b\x32\x1a.bytedance.byteplus.Status\x12\x12\n\nrequest_id\x18\x02 \x01(\t\x12\x37\n\x05value\x18\x03 \x01(\x0b\x32(.bytedance.byteplus.retail.PredictResult\"\xca\x02\n\x1b\x41\x63kServerImpressionsRequest\x12\x1a\n\x12predict_request_id\x18\x01 \x01(\t\x12\x0f\n\x07user_id\x18\x02 \x01(\t\x12\x16\n\x0etraffic_source\x18\x03 \x01(\t\x12\x39\n\x05scene\x18\x04 \x01(\x0b\x32*.bytedance.byteplus.retail.UserEvent.Scene\x12_\n\x10\x61ltered_products\x18\x05 \x03(\x0b\x32\x45.bytedance.byteplus.retail.AckServerImpressionsRequest.AlteredProduct\x1aJ\n\x0e\x41lteredProduct\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x16\n\x0e\x61ltered_reason\x18\x02 \x01(\t\x12\x0c\n\x04rank\x18\x03 \x01(\x05\"J\n\x1c\x41\x63kServerImpressionsResponse\x12*\n\x06status\x18\x01 \x01(\x0b\x32\x1a.bytedance.byteplus.Status2\x9b\x07\n\x15\x42yteplusRetailService\x12i\n\nWriteUsers\x12,.bytedance.byteplus.retail.WriteUsersRequest\x1a-.bytedance.byteplus.retail.WriteUsersResponse\x12\x63\n\x0bImportUsers\x12-.bytedance.byteplus.retail.ImportUsersRequest\x1a%.bytedance.byteplus.OperationResponse\x12r\n\rWriteProducts\x12/.bytedance.byteplus.retail.WriteProductsRequest\x1a\x30.bytedance.byteplus.retail.WriteProductsResponse\x12i\n\x0eImportProducts\x12\x30.bytedance.byteplus.retail.ImportProductsRequest\x1a%.bytedance.byteplus.OperationResponse\x12x\n\x0fWriteUserEvents\x12\x31.bytedance.byteplus.retail.WriteUserEventsRequest\x1a\x32.bytedance.byteplus.retail.WriteUserEventsResponse\x12m\n\x10ImportUserEvents\x12\x32.bytedance.byteplus.retail.ImportUserEventsRequest\x1a%.bytedance.byteplus.OperationResponse\x12`\n\x07Predict\x12).bytedance.byteplus.retail.PredictRequest\x1a*.bytedance.byteplus.retail.PredictResponse\x12\x87\x01\n\x14\x41\x63kServerImpressions\x12\x36.bytedance.byteplus.retail.AckServerImpressionsRequest\x1a\x37.bytedance.byteplus.retail.AckServerImpressionsResponseBN\n\x1c\x62yteplus.sdk.retail.protocolZ.github.com/byteplus-sdk/sdk-go/retail/protocolb\x06proto3'
   ,
-  dependencies=[google_dot_protobuf_dot_any__pb2.DESCRIPTOR,])
+  dependencies=[byteplus__common__pb2.DESCRIPTOR,])
 
 
-
-
-_STATUS = _descriptor.Descriptor(
-  name='Status',
-  full_name='bytedance.byteplus.retail.Status',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='code', full_name='bytedance.byteplus.retail.Status.code', index=0,
-      number=1, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='message', full_name='bytedance.byteplus.retail.Status.message', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=79,
-  serialized_end=118,
-)
-
-
-_METADATA = _descriptor.Descriptor(
-  name='Metadata',
-  full_name='bytedance.byteplus.retail.Metadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='date', full_name='bytedance.byteplus.retail.Metadata.date', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='total_count', full_name='bytedance.byteplus.retail.Metadata.total_count', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='success_count', full_name='bytedance.byteplus.retail.Metadata.success_count', index=2,
-      number=3, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='failure_count', full_name='bytedance.byteplus.retail.Metadata.failure_count', index=3,
-      number=4, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='submit_time', full_name='bytedance.byteplus.retail.Metadata.submit_time', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='update_time', full_name='bytedance.byteplus.retail.Metadata.update_time', index=5,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=121,
-  serialized_end=254,
-)
-
-
-_OPERATION = _descriptor.Descriptor(
-  name='Operation',
-  full_name='bytedance.byteplus.retail.Operation',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='name', full_name='bytedance.byteplus.retail.Operation.name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='metadata', full_name='bytedance.byteplus.retail.Operation.metadata', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='done', full_name='bytedance.byteplus.retail.Operation.done', index=2,
-      number=3, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='response', full_name='bytedance.byteplus.retail.Operation.response', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=257,
-  serialized_end=391,
-)
-
-
-_OPERATIONRESPONSE = _descriptor.Descriptor(
-  name='OperationResponse',
-  full_name='bytedance.byteplus.retail.OperationResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='bytedance.byteplus.retail.OperationResponse.status', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='operation', full_name='bytedance.byteplus.retail.OperationResponse.operation', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=393,
-  serialized_end=520,
-)
-
-
-_GETOPERATIONREQUEST = _descriptor.Descriptor(
-  name='GetOperationRequest',
-  full_name='bytedance.byteplus.retail.GetOperationRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='name', full_name='bytedance.byteplus.retail.GetOperationRequest.name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=522,
-  serialized_end=557,
-)
-
-
-_LISTOPERATIONSREQUEST = _descriptor.Descriptor(
-  name='ListOperationsRequest',
-  full_name='bytedance.byteplus.retail.ListOperationsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='bytedance.byteplus.retail.ListOperationsRequest.filter', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='bytedance.byteplus.retail.ListOperationsRequest.page_size', index=1,
-      number=2, type=5, cpp_type=1, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='bytedance.byteplus.retail.ListOperationsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=559,
-  serialized_end=637,
-)
-
-
-_LISTOPERATIONSRESPONSE = _descriptor.Descriptor(
-  name='ListOperationsResponse',
-  full_name='bytedance.byteplus.retail.ListOperationsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='status', full_name='bytedance.byteplus.retail.ListOperationsResponse.status', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='operations', full_name='bytedance.byteplus.retail.ListOperationsResponse.operations', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='bytedance.byteplus.retail.ListOperationsResponse.next_page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=640,
-  serialized_end=798,
-)
 
 
 _USER_LOCATION = _descriptor.Descriptor(
@@ -397,8 +73,8 @@ _USER_LOCATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1074,
-  serialized_end=1159,
+  serialized_start=349,
+  serialized_end=434,
 )
 
 _USER_EXTRAENTRY = _descriptor.Descriptor(
@@ -435,8 +111,8 @@ _USER_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1161,
-  serialized_end=1205,
+  serialized_start=436,
+  serialized_end=480,
 )
 
 _USER = _descriptor.Descriptor(
@@ -522,8 +198,8 @@ _USER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=801,
-  serialized_end=1205,
+  serialized_start=76,
+  serialized_end=480,
 )
 
 
@@ -561,8 +237,8 @@ _WRITEUSERSREQUEST_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1161,
-  serialized_end=1205,
+  serialized_start=436,
+  serialized_end=480,
 )
 
 _WRITEUSERSREQUEST = _descriptor.Descriptor(
@@ -599,8 +275,8 @@ _WRITEUSERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1208,
-  serialized_end=1393,
+  serialized_start=483,
+  serialized_end=668,
 )
 
 
@@ -638,8 +314,8 @@ _USERERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1395,
-  serialized_end=1470,
+  serialized_start=670,
+  serialized_end=745,
 )
 
 
@@ -677,8 +353,8 @@ _WRITEUSERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1472,
-  serialized_end=1597,
+  serialized_start=747,
+  serialized_end=865,
 )
 
 
@@ -709,8 +385,8 @@ _USERSINLINESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1599,
-  serialized_end=1666,
+  serialized_start=867,
+  serialized_end=934,
 )
 
 
@@ -746,8 +422,8 @@ _USERSINPUTCONFIG = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1668,
-  serialized_end=1773,
+  serialized_start=936,
+  serialized_end=1041,
 )
 
 
@@ -785,8 +461,8 @@ _DATECONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1775,
-  serialized_end=1817,
+  serialized_start=1043,
+  serialized_end=1085,
 )
 
 
@@ -822,8 +498,8 @@ _IMPORTERRORSCONFIG = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1819,
-  serialized_end=1883,
+  serialized_start=1087,
+  serialized_end=1151,
 )
 
 
@@ -861,8 +537,8 @@ _IMPORTUSERSREQUEST_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1161,
-  serialized_end=1205,
+  serialized_start=436,
+  serialized_end=480,
 )
 
 _IMPORTUSERSREQUEST = _descriptor.Descriptor(
@@ -913,8 +589,8 @@ _IMPORTUSERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1886,
-  serialized_end=2222,
+  serialized_start=1154,
+  serialized_end=1490,
 )
 
 
@@ -952,8 +628,8 @@ _IMPORTUSERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2225,
-  serialized_end=2358,
+  serialized_start=1492,
+  serialized_end=1618,
 )
 
 
@@ -984,8 +660,8 @@ _PRODUCT_CATEGORY_CATEGORYNODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3021,
-  serialized_end=3055,
+  serialized_start=2281,
+  serialized_end=2315,
 )
 
 _PRODUCT_CATEGORY = _descriptor.Descriptor(
@@ -1022,8 +698,8 @@ _PRODUCT_CATEGORY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2903,
-  serialized_end=3055,
+  serialized_start=2163,
+  serialized_end=2315,
 )
 
 _PRODUCT_BRAND = _descriptor.Descriptor(
@@ -1060,8 +736,8 @@ _PRODUCT_BRAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3057,
-  serialized_end=3105,
+  serialized_start=2317,
+  serialized_end=2365,
 )
 
 _PRODUCT_PRICE = _descriptor.Descriptor(
@@ -1098,8 +774,8 @@ _PRODUCT_PRICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3107,
-  serialized_end=3159,
+  serialized_start=2367,
+  serialized_end=2419,
 )
 
 _PRODUCT_DISPLAY = _descriptor.Descriptor(
@@ -1150,8 +826,8 @@ _PRODUCT_DISPLAY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3162,
-  serialized_end=3305,
+  serialized_start=2422,
+  serialized_end=2565,
 )
 
 _PRODUCT_PRODUCTSPEC = _descriptor.Descriptor(
@@ -1209,8 +885,8 @@ _PRODUCT_PRODUCTSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3307,
-  serialized_end=3433,
+  serialized_start=2567,
+  serialized_end=2693,
 )
 
 _PRODUCT_SELLER = _descriptor.Descriptor(
@@ -1254,8 +930,8 @@ _PRODUCT_SELLER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3435,
-  serialized_end=3500,
+  serialized_start=2695,
+  serialized_end=2760,
 )
 
 _PRODUCT_EXTRAENTRY = _descriptor.Descriptor(
@@ -1292,8 +968,8 @@ _PRODUCT_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1161,
-  serialized_end=1205,
+  serialized_start=436,
+  serialized_end=480,
 )
 
 _PRODUCT = _descriptor.Descriptor(
@@ -1400,8 +1076,8 @@ _PRODUCT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2361,
-  serialized_end=3546,
+  serialized_start=1621,
+  serialized_end=2806,
 )
 
 
@@ -1439,8 +1115,8 @@ _WRITEPRODUCTSREQUEST_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1161,
-  serialized_end=1205,
+  serialized_start=436,
+  serialized_end=480,
 )
 
 _WRITEPRODUCTSREQUEST = _descriptor.Descriptor(
@@ -1477,8 +1153,8 @@ _WRITEPRODUCTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3549,
-  serialized_end=3746,
+  serialized_start=2809,
+  serialized_end=3006,
 )
 
 
@@ -1516,8 +1192,8 @@ _PRODUCTERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3748,
-  serialized_end=3832,
+  serialized_start=3008,
+  serialized_end=3092,
 )
 
 
@@ -1555,8 +1231,8 @@ _WRITEPRODUCTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3835,
-  serialized_end=3966,
+  serialized_start=3094,
+  serialized_end=3218,
 )
 
 
@@ -1587,8 +1263,8 @@ _PRODUCTSINLINESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3968,
-  serialized_end=4044,
+  serialized_start=3220,
+  serialized_end=3296,
 )
 
 
@@ -1624,8 +1300,8 @@ _PRODUCTSINPUTCONFIG = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=4046,
-  serialized_end=4160,
+  serialized_start=3298,
+  serialized_end=3412,
 )
 
 
@@ -1663,8 +1339,8 @@ _IMPORTPRODUCTSREQUEST_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1161,
-  serialized_end=1205,
+  serialized_start=436,
+  serialized_end=480,
 )
 
 _IMPORTPRODUCTSREQUEST = _descriptor.Descriptor(
@@ -1715,8 +1391,8 @@ _IMPORTPRODUCTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4163,
-  serialized_end=4508,
+  serialized_start=3415,
+  serialized_end=3760,
 )
 
 
@@ -1754,8 +1430,8 @@ _IMPORTPRODUCTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4511,
-  serialized_end=4650,
+  serialized_start=3763,
+  serialized_end=3895,
 )
 
 
@@ -1800,8 +1476,8 @@ _USEREVENT_SCENE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5119,
-  serialized_end=5183,
+  serialized_start=4364,
+  serialized_end=4428,
 )
 
 _USEREVENT_DEVICE = _descriptor.Descriptor(
@@ -1887,8 +1563,8 @@ _USEREVENT_DEVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5186,
-  serialized_end=5373,
+  serialized_start=4431,
+  serialized_end=4618,
 )
 
 _USEREVENT_CONTEXT = _descriptor.Descriptor(
@@ -1925,8 +1601,8 @@ _USEREVENT_CONTEXT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5375,
-  serialized_end=5424,
+  serialized_start=4620,
+  serialized_end=4669,
 )
 
 _USEREVENT_EXTRAENTRY = _descriptor.Descriptor(
@@ -1963,8 +1639,8 @@ _USEREVENT_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1161,
-  serialized_end=1205,
+  serialized_start=436,
+  serialized_end=480,
 )
 
 _USEREVENT = _descriptor.Descriptor(
@@ -2078,8 +1754,8 @@ _USEREVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4653,
-  serialized_end=5470,
+  serialized_start=3898,
+  serialized_end=4715,
 )
 
 
@@ -2117,8 +1793,8 @@ _WRITEUSEREVENTSREQUEST_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1161,
-  serialized_end=1205,
+  serialized_start=436,
+  serialized_end=480,
 )
 
 _WRITEUSEREVENTSREQUEST = _descriptor.Descriptor(
@@ -2155,8 +1831,8 @@ _WRITEUSEREVENTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5473,
-  serialized_end=5679,
+  serialized_start=4718,
+  serialized_end=4924,
 )
 
 
@@ -2194,8 +1870,8 @@ _USEREVENTERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5681,
-  serialized_end=5772,
+  serialized_start=4926,
+  serialized_end=5017,
 )
 
 
@@ -2233,8 +1909,8 @@ _WRITEUSEREVENTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5775,
-  serialized_end=5910,
+  serialized_start=5020,
+  serialized_end=5148,
 )
 
 
@@ -2265,8 +1941,8 @@ _USEREVENTSINLINESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5912,
-  serialized_end=5995,
+  serialized_start=5150,
+  serialized_end=5233,
 )
 
 
@@ -2302,8 +1978,8 @@ _USEREVENTSINPUTCONFIG = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=5997,
-  serialized_end=6118,
+  serialized_start=5235,
+  serialized_end=5356,
 )
 
 
@@ -2341,8 +2017,8 @@ _IMPORTUSEREVENTSREQUEST_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1161,
-  serialized_end=1205,
+  serialized_start=436,
+  serialized_end=480,
 )
 
 _IMPORTUSEREVENTSREQUEST = _descriptor.Descriptor(
@@ -2393,8 +2069,8 @@ _IMPORTUSEREVENTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6121,
-  serialized_end=6472,
+  serialized_start=5359,
+  serialized_end=5710,
 )
 
 
@@ -2432,8 +2108,8 @@ _IMPORTUSEREVENTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6475,
-  serialized_end=6618,
+  serialized_start=5713,
+  serialized_end=5849,
 )
 
 
@@ -2478,8 +2154,8 @@ _PREDICTREQUEST_CONTEXT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6867,
-  serialized_end=7026,
+  serialized_start=6098,
+  serialized_end=6257,
 )
 
 _PREDICTREQUEST_EXTRAENTRY = _descriptor.Descriptor(
@@ -2516,8 +2192,8 @@ _PREDICTREQUEST_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1161,
-  serialized_end=1205,
+  serialized_start=436,
+  serialized_end=480,
 )
 
 _PREDICTREQUEST = _descriptor.Descriptor(
@@ -2575,8 +2251,8 @@ _PREDICTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6621,
-  serialized_end=7072,
+  serialized_start=5852,
+  serialized_end=6303,
 )
 
 
@@ -2614,8 +2290,8 @@ _PREDICTRESULT_RESPONSEPRODUCT_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1161,
-  serialized_end=1205,
+  serialized_start=436,
+  serialized_end=480,
 )
 
 _PREDICTRESULT_RESPONSEPRODUCT = _descriptor.Descriptor(
@@ -2680,8 +2356,8 @@ _PREDICTRESULT_RESPONSEPRODUCT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7246,
-  serialized_end=7473,
+  serialized_start=6477,
+  serialized_end=6704,
 )
 
 _PREDICTRESULT_EXTRAENTRY = _descriptor.Descriptor(
@@ -2718,8 +2394,8 @@ _PREDICTRESULT_EXTRAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1161,
-  serialized_end=1205,
+  serialized_start=436,
+  serialized_end=480,
 )
 
 _PREDICTRESULT = _descriptor.Descriptor(
@@ -2756,8 +2432,8 @@ _PREDICTRESULT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7075,
-  serialized_end=7519,
+  serialized_start=6306,
+  serialized_end=6750,
 )
 
 
@@ -2802,8 +2478,8 @@ _PREDICTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7522,
-  serialized_end=7667,
+  serialized_start=6753,
+  serialized_end=6891,
 )
 
 
@@ -2848,8 +2524,8 @@ _ACKSERVERIMPRESSIONSREQUEST_ALTEREDPRODUCT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7926,
-  serialized_end=8000,
+  serialized_start=7150,
+  serialized_end=7224,
 )
 
 _ACKSERVERIMPRESSIONSREQUEST = _descriptor.Descriptor(
@@ -2907,8 +2583,8 @@ _ACKSERVERIMPRESSIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7670,
-  serialized_end=8000,
+  serialized_start=6894,
+  serialized_end=7224,
 )
 
 
@@ -2939,16 +2615,10 @@ _ACKSERVERIMPRESSIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8002,
-  serialized_end=8083,
+  serialized_start=7226,
+  serialized_end=7300,
 )
 
-_OPERATION.fields_by_name['metadata'].message_type = _METADATA
-_OPERATION.fields_by_name['response'].message_type = google_dot_protobuf_dot_any__pb2._ANY
-_OPERATIONRESPONSE.fields_by_name['status'].message_type = _STATUS
-_OPERATIONRESPONSE.fields_by_name['operation'].message_type = _OPERATION
-_LISTOPERATIONSRESPONSE.fields_by_name['status'].message_type = _STATUS
-_LISTOPERATIONSRESPONSE.fields_by_name['operations'].message_type = _OPERATION
 _USER_LOCATION.containing_type = _USER
 _USER_EXTRAENTRY.containing_type = _USER
 _USER.fields_by_name['location'].message_type = _USER_LOCATION
@@ -2957,7 +2627,7 @@ _WRITEUSERSREQUEST_EXTRAENTRY.containing_type = _WRITEUSERSREQUEST
 _WRITEUSERSREQUEST.fields_by_name['users'].message_type = _USER
 _WRITEUSERSREQUEST.fields_by_name['extra'].message_type = _WRITEUSERSREQUEST_EXTRAENTRY
 _USERERROR.fields_by_name['user'].message_type = _USER
-_WRITEUSERSRESPONSE.fields_by_name['status'].message_type = _STATUS
+_WRITEUSERSRESPONSE.fields_by_name['status'].message_type = byteplus__common__pb2._STATUS
 _WRITEUSERSRESPONSE.fields_by_name['errors'].message_type = _USERERROR
 _USERSINLINESOURCE.fields_by_name['users'].message_type = _USER
 _USERSINPUTCONFIG.fields_by_name['users_inline_source'].message_type = _USERSINLINESOURCE
@@ -2972,7 +2642,7 @@ _IMPORTUSERSREQUEST.fields_by_name['input_config'].message_type = _USERSINPUTCON
 _IMPORTUSERSREQUEST.fields_by_name['date_config'].message_type = _DATECONFIG
 _IMPORTUSERSREQUEST.fields_by_name['errors_config'].message_type = _IMPORTERRORSCONFIG
 _IMPORTUSERSREQUEST.fields_by_name['extra'].message_type = _IMPORTUSERSREQUEST_EXTRAENTRY
-_IMPORTUSERSRESPONSE.fields_by_name['status'].message_type = _STATUS
+_IMPORTUSERSRESPONSE.fields_by_name['status'].message_type = byteplus__common__pb2._STATUS
 _IMPORTUSERSRESPONSE.fields_by_name['error_samples'].message_type = _USERERROR
 _PRODUCT_CATEGORY_CATEGORYNODE.containing_type = _PRODUCT_CATEGORY
 _PRODUCT_CATEGORY.fields_by_name['category_nodes'].message_type = _PRODUCT_CATEGORY_CATEGORYNODE
@@ -2994,7 +2664,7 @@ _WRITEPRODUCTSREQUEST_EXTRAENTRY.containing_type = _WRITEPRODUCTSREQUEST
 _WRITEPRODUCTSREQUEST.fields_by_name['products'].message_type = _PRODUCT
 _WRITEPRODUCTSREQUEST.fields_by_name['extra'].message_type = _WRITEPRODUCTSREQUEST_EXTRAENTRY
 _PRODUCTERROR.fields_by_name['product'].message_type = _PRODUCT
-_WRITEPRODUCTSRESPONSE.fields_by_name['status'].message_type = _STATUS
+_WRITEPRODUCTSRESPONSE.fields_by_name['status'].message_type = byteplus__common__pb2._STATUS
 _WRITEPRODUCTSRESPONSE.fields_by_name['errors'].message_type = _PRODUCTERROR
 _PRODUCTSINLINESOURCE.fields_by_name['products'].message_type = _PRODUCT
 _PRODUCTSINPUTCONFIG.fields_by_name['products_inline_source'].message_type = _PRODUCTSINLINESOURCE
@@ -3006,7 +2676,7 @@ _IMPORTPRODUCTSREQUEST.fields_by_name['input_config'].message_type = _PRODUCTSIN
 _IMPORTPRODUCTSREQUEST.fields_by_name['date_config'].message_type = _DATECONFIG
 _IMPORTPRODUCTSREQUEST.fields_by_name['errors_config'].message_type = _IMPORTERRORSCONFIG
 _IMPORTPRODUCTSREQUEST.fields_by_name['extra'].message_type = _IMPORTPRODUCTSREQUEST_EXTRAENTRY
-_IMPORTPRODUCTSRESPONSE.fields_by_name['status'].message_type = _STATUS
+_IMPORTPRODUCTSRESPONSE.fields_by_name['status'].message_type = byteplus__common__pb2._STATUS
 _IMPORTPRODUCTSRESPONSE.fields_by_name['error_samples'].message_type = _PRODUCTERROR
 _USEREVENT_SCENE.containing_type = _USEREVENT
 _USEREVENT_DEVICE.containing_type = _USEREVENT
@@ -3020,7 +2690,7 @@ _WRITEUSEREVENTSREQUEST_EXTRAENTRY.containing_type = _WRITEUSEREVENTSREQUEST
 _WRITEUSEREVENTSREQUEST.fields_by_name['user_events'].message_type = _USEREVENT
 _WRITEUSEREVENTSREQUEST.fields_by_name['extra'].message_type = _WRITEUSEREVENTSREQUEST_EXTRAENTRY
 _USEREVENTERROR.fields_by_name['user_event'].message_type = _USEREVENT
-_WRITEUSEREVENTSRESPONSE.fields_by_name['status'].message_type = _STATUS
+_WRITEUSEREVENTSRESPONSE.fields_by_name['status'].message_type = byteplus__common__pb2._STATUS
 _WRITEUSEREVENTSRESPONSE.fields_by_name['errors'].message_type = _USEREVENTERROR
 _USEREVENTSINLINESOURCE.fields_by_name['user_events'].message_type = _USEREVENT
 _USEREVENTSINPUTCONFIG.fields_by_name['user_events_inline_source'].message_type = _USEREVENTSINLINESOURCE
@@ -3032,7 +2702,7 @@ _IMPORTUSEREVENTSREQUEST.fields_by_name['input_config'].message_type = _USEREVEN
 _IMPORTUSEREVENTSREQUEST.fields_by_name['date_config'].message_type = _DATECONFIG
 _IMPORTUSEREVENTSREQUEST.fields_by_name['errors_config'].message_type = _IMPORTERRORSCONFIG
 _IMPORTUSEREVENTSREQUEST.fields_by_name['extra'].message_type = _IMPORTUSEREVENTSREQUEST_EXTRAENTRY
-_IMPORTUSEREVENTSRESPONSE.fields_by_name['status'].message_type = _STATUS
+_IMPORTUSEREVENTSRESPONSE.fields_by_name['status'].message_type = byteplus__common__pb2._STATUS
 _IMPORTUSEREVENTSRESPONSE.fields_by_name['error_samples'].message_type = _USEREVENTERROR
 _PREDICTREQUEST_CONTEXT.fields_by_name['root_product'].message_type = _PRODUCT
 _PREDICTREQUEST_CONTEXT.fields_by_name['device'].message_type = _USEREVENT_DEVICE
@@ -3047,19 +2717,12 @@ _PREDICTRESULT_RESPONSEPRODUCT.containing_type = _PREDICTRESULT
 _PREDICTRESULT_EXTRAENTRY.containing_type = _PREDICTRESULT
 _PREDICTRESULT.fields_by_name['response_products'].message_type = _PREDICTRESULT_RESPONSEPRODUCT
 _PREDICTRESULT.fields_by_name['extra'].message_type = _PREDICTRESULT_EXTRAENTRY
-_PREDICTRESPONSE.fields_by_name['status'].message_type = _STATUS
+_PREDICTRESPONSE.fields_by_name['status'].message_type = byteplus__common__pb2._STATUS
 _PREDICTRESPONSE.fields_by_name['value'].message_type = _PREDICTRESULT
 _ACKSERVERIMPRESSIONSREQUEST_ALTEREDPRODUCT.containing_type = _ACKSERVERIMPRESSIONSREQUEST
 _ACKSERVERIMPRESSIONSREQUEST.fields_by_name['scene'].message_type = _USEREVENT_SCENE
 _ACKSERVERIMPRESSIONSREQUEST.fields_by_name['altered_products'].message_type = _ACKSERVERIMPRESSIONSREQUEST_ALTEREDPRODUCT
-_ACKSERVERIMPRESSIONSRESPONSE.fields_by_name['status'].message_type = _STATUS
-DESCRIPTOR.message_types_by_name['Status'] = _STATUS
-DESCRIPTOR.message_types_by_name['Metadata'] = _METADATA
-DESCRIPTOR.message_types_by_name['Operation'] = _OPERATION
-DESCRIPTOR.message_types_by_name['OperationResponse'] = _OPERATIONRESPONSE
-DESCRIPTOR.message_types_by_name['GetOperationRequest'] = _GETOPERATIONREQUEST
-DESCRIPTOR.message_types_by_name['ListOperationsRequest'] = _LISTOPERATIONSREQUEST
-DESCRIPTOR.message_types_by_name['ListOperationsResponse'] = _LISTOPERATIONSRESPONSE
+_ACKSERVERIMPRESSIONSRESPONSE.fields_by_name['status'].message_type = byteplus__common__pb2._STATUS
 DESCRIPTOR.message_types_by_name['User'] = _USER
 DESCRIPTOR.message_types_by_name['WriteUsersRequest'] = _WRITEUSERSREQUEST
 DESCRIPTOR.message_types_by_name['UserError'] = _USERERROR
@@ -3092,55 +2755,6 @@ DESCRIPTOR.message_types_by_name['PredictResponse'] = _PREDICTRESPONSE
 DESCRIPTOR.message_types_by_name['AckServerImpressionsRequest'] = _ACKSERVERIMPRESSIONSREQUEST
 DESCRIPTOR.message_types_by_name['AckServerImpressionsResponse'] = _ACKSERVERIMPRESSIONSRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,), {
-  'DESCRIPTOR' : _STATUS,
-  '__module__' : 'byteplus_retail_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.Status)
-  })
-_sym_db.RegisterMessage(Status)
-
-Metadata = _reflection.GeneratedProtocolMessageType('Metadata', (_message.Message,), {
-  'DESCRIPTOR' : _METADATA,
-  '__module__' : 'byteplus_retail_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.Metadata)
-  })
-_sym_db.RegisterMessage(Metadata)
-
-Operation = _reflection.GeneratedProtocolMessageType('Operation', (_message.Message,), {
-  'DESCRIPTOR' : _OPERATION,
-  '__module__' : 'byteplus_retail_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.Operation)
-  })
-_sym_db.RegisterMessage(Operation)
-
-OperationResponse = _reflection.GeneratedProtocolMessageType('OperationResponse', (_message.Message,), {
-  'DESCRIPTOR' : _OPERATIONRESPONSE,
-  '__module__' : 'byteplus_retail_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.OperationResponse)
-  })
-_sym_db.RegisterMessage(OperationResponse)
-
-GetOperationRequest = _reflection.GeneratedProtocolMessageType('GetOperationRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETOPERATIONREQUEST,
-  '__module__' : 'byteplus_retail_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.GetOperationRequest)
-  })
-_sym_db.RegisterMessage(GetOperationRequest)
-
-ListOperationsRequest = _reflection.GeneratedProtocolMessageType('ListOperationsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTOPERATIONSREQUEST,
-  '__module__' : 'byteplus_retail_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.ListOperationsRequest)
-  })
-_sym_db.RegisterMessage(ListOperationsRequest)
-
-ListOperationsResponse = _reflection.GeneratedProtocolMessageType('ListOperationsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTOPERATIONSRESPONSE,
-  '__module__' : 'byteplus_retail_pb2'
-  # @@protoc_insertion_point(class_scope:bytedance.byteplus.retail.ListOperationsResponse)
-  })
-_sym_db.RegisterMessage(ListOperationsResponse)
 
 User = _reflection.GeneratedProtocolMessageType('User', (_message.Message,), {
 
@@ -3568,6 +3182,7 @@ AckServerImpressionsResponse = _reflection.GeneratedProtocolMessageType('AckServ
 _sym_db.RegisterMessage(AckServerImpressionsResponse)
 
 
+DESCRIPTOR._options = None
 _USER_EXTRAENTRY._options = None
 _WRITEUSERSREQUEST_EXTRAENTRY._options = None
 _IMPORTUSERSREQUEST_EXTRAENTRY._options = None
@@ -3582,18 +3197,18 @@ _PREDICTRESULT_RESPONSEPRODUCT_EXTRAENTRY._options = None
 _PREDICTRESULT_EXTRAENTRY._options = None
 
 _BYTEPLUSRETAILSERVICE = _descriptor.ServiceDescriptor(
-  name='BytePlusRetailService',
-  full_name='bytedance.byteplus.retail.BytePlusRetailService',
+  name='ByteplusRetailService',
+  full_name='bytedance.byteplus.retail.ByteplusRetailService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=8086,
-  serialized_end=9259,
+  serialized_start=7303,
+  serialized_end=8226,
   methods=[
   _descriptor.MethodDescriptor(
     name='WriteUsers',
-    full_name='bytedance.byteplus.retail.BytePlusRetailService.WriteUsers',
+    full_name='bytedance.byteplus.retail.ByteplusRetailService.WriteUsers',
     index=0,
     containing_service=None,
     input_type=_WRITEUSERSREQUEST,
@@ -3603,17 +3218,17 @@ _BYTEPLUSRETAILSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='ImportUsers',
-    full_name='bytedance.byteplus.retail.BytePlusRetailService.ImportUsers',
+    full_name='bytedance.byteplus.retail.ByteplusRetailService.ImportUsers',
     index=1,
     containing_service=None,
     input_type=_IMPORTUSERSREQUEST,
-    output_type=_OPERATIONRESPONSE,
+    output_type=byteplus__common__pb2._OPERATIONRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='WriteProducts',
-    full_name='bytedance.byteplus.retail.BytePlusRetailService.WriteProducts',
+    full_name='bytedance.byteplus.retail.ByteplusRetailService.WriteProducts',
     index=2,
     containing_service=None,
     input_type=_WRITEPRODUCTSREQUEST,
@@ -3623,17 +3238,17 @@ _BYTEPLUSRETAILSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='ImportProducts',
-    full_name='bytedance.byteplus.retail.BytePlusRetailService.ImportProducts',
+    full_name='bytedance.byteplus.retail.ByteplusRetailService.ImportProducts',
     index=3,
     containing_service=None,
     input_type=_IMPORTPRODUCTSREQUEST,
-    output_type=_OPERATIONRESPONSE,
+    output_type=byteplus__common__pb2._OPERATIONRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='WriteUserEvents',
-    full_name='bytedance.byteplus.retail.BytePlusRetailService.WriteUserEvents',
+    full_name='bytedance.byteplus.retail.ByteplusRetailService.WriteUserEvents',
     index=4,
     containing_service=None,
     input_type=_WRITEUSEREVENTSREQUEST,
@@ -3643,38 +3258,18 @@ _BYTEPLUSRETAILSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='ImportUserEvents',
-    full_name='bytedance.byteplus.retail.BytePlusRetailService.ImportUserEvents',
+    full_name='bytedance.byteplus.retail.ByteplusRetailService.ImportUserEvents',
     index=5,
     containing_service=None,
     input_type=_IMPORTUSEREVENTSREQUEST,
-    output_type=_OPERATIONRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetOperation',
-    full_name='bytedance.byteplus.retail.BytePlusRetailService.GetOperation',
-    index=6,
-    containing_service=None,
-    input_type=_GETOPERATIONREQUEST,
-    output_type=_OPERATIONRESPONSE,
-    serialized_options=None,
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListOperations',
-    full_name='bytedance.byteplus.retail.BytePlusRetailService.ListOperations',
-    index=7,
-    containing_service=None,
-    input_type=_LISTOPERATIONSREQUEST,
-    output_type=_LISTOPERATIONSRESPONSE,
+    output_type=byteplus__common__pb2._OPERATIONRESPONSE,
     serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Predict',
-    full_name='bytedance.byteplus.retail.BytePlusRetailService.Predict',
-    index=8,
+    full_name='bytedance.byteplus.retail.ByteplusRetailService.Predict',
+    index=6,
     containing_service=None,
     input_type=_PREDICTREQUEST,
     output_type=_PREDICTRESPONSE,
@@ -3683,8 +3278,8 @@ _BYTEPLUSRETAILSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='AckServerImpressions',
-    full_name='bytedance.byteplus.retail.BytePlusRetailService.AckServerImpressions',
-    index=9,
+    full_name='bytedance.byteplus.retail.ByteplusRetailService.AckServerImpressions',
+    index=7,
     containing_service=None,
     input_type=_ACKSERVERIMPRESSIONSREQUEST,
     output_type=_ACKSERVERIMPRESSIONSRESPONSE,
@@ -3694,6 +3289,6 @@ _BYTEPLUSRETAILSERVICE = _descriptor.ServiceDescriptor(
 ])
 _sym_db.RegisterServiceDescriptor(_BYTEPLUSRETAILSERVICE)
 
-DESCRIPTOR.services_by_name['BytePlusRetailService'] = _BYTEPLUSRETAILSERVICE
+DESCRIPTOR.services_by_name['ByteplusRetailService'] = _BYTEPLUSRETAILSERVICE
 
 # @@protoc_insertion_point(module_scope)

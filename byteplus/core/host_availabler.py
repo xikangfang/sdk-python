@@ -13,7 +13,7 @@ log = logging.getLogger(__name__)
 _CHECK_INTERVAL_SECONDS: int = 1
 _WINDOW_SIZE: int = 60
 _FAILURE_RATE_THRESHOLD: float = 0.1
-_PING_URL_FORMAT: str = "https://{}/air/api/ping"
+_PING_URL_FORMAT: str = "#://{}/predict/api/ping"
 _PING_TIMEOUT_SECONDS: float = 0.3
 _PING_SUCCESS_HTTP_CODE = 200
 
@@ -23,9 +23,11 @@ class HostAvailabler(object):
     def __init__(self, url_center: URLCenter, context: Context):
         self._url_center: URLCenter = url_center
         self._context: Context = context
+        self._ping_url_format = _PING_URL_FORMAT.replace("#", context.schema)
         self._available_hosts: list = context.hosts
         self._current_host: str = context.hosts[0]
         self._host_window_map: dict = {}
+        self._abort: bool = False
         if len(context.hosts) <= 1:
             return
         for host in context.hosts:
@@ -33,7 +35,12 @@ class HostAvailabler(object):
         threading.Thread(target=self._start_schedule).start()
         return
 
+    def shutdown(self):
+        self._abort = True
+
     def _start_schedule(self) -> None:
+        if self._abort:
+            return
         # log.debug("[ByteplusSDK] http")
         self._check_host()
         # a timer only execute once after spec duration
@@ -57,12 +64,12 @@ class HostAvailabler(object):
             return
         self._available_hosts.sort(key=lambda item: self._host_window_map[item].failure_rate())
 
-    @staticmethod
-    def _ping(host) -> bool:
-        url: str = _PING_URL_FORMAT.format(host)
+    def _ping(self, host) -> bool:
+        url: str = self._ping_url_format.format(host)
+        headers = self._context.customer_headers
         start = time.time()
         try:
-            rsp: Response = requests.get(url, timeout=_PING_TIMEOUT_SECONDS)
+            rsp: Response = requests.get(url, headers=headers, timeout=_PING_TIMEOUT_SECONDS)
         except BaseException as e:
             log.warning("[ByteplusSDK] ping find err, host:'%s' err:'%s'", host, e)
             return False

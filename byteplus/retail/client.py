@@ -1,11 +1,12 @@
 import logging
 from optparse import Option
 
-from byteplus.core import MAX_WRITE_ITEM_COUNT, MAX_IMPORT_ITEM_COUNT
+from byteplus.common.client import CommonClient
+from byteplus.common.protocol import *
 from byteplus.core import BizException
+from byteplus.core import MAX_WRITE_ITEM_COUNT, MAX_IMPORT_ITEM_COUNT
 from byteplus.core import Region
-from byteplus.core.context import Context, Param
-from byteplus.core.http_caller import HttpCaller
+from byteplus.core.context import Param
 from byteplus.retail.protocol import *
 from byteplus.retail.url import _RetailURL
 
@@ -15,19 +16,21 @@ _TOO_MANY_WRITE_ITEMS_ERR_MSG = "Only can receive %d items in one write request"
 _TOO_MANY_IMPORT_ITEMS_ERR_MSG = "Only can receive %d items in one import request".format(MAX_IMPORT_ITEM_COUNT)
 
 
-class Client(object):
+class Client(CommonClient):
 
     def __init__(self, param: Param):
-        context: Context = Context(param)
-        self._retail_url: _RetailURL = _RetailURL(context)
-        self._http_caller: HttpCaller = HttpCaller(context)
+        super().__init__(param)
+        self._retail_url: _RetailURL = _RetailURL(self._context)
+
+    def do_refresh(self, host: str):
+        self._retail_url.refresh(host)
 
     def write_users(self, request: WriteUsersRequest, *opts: Option) -> WriteUsersResponse:
         if len(request.users) > MAX_WRITE_ITEM_COUNT:
             raise BizException(_TOO_MANY_WRITE_ITEMS_ERR_MSG)
         url: str = self._retail_url.write_users_url
         response: WriteUsersResponse = WriteUsersResponse()
-        self._http_caller.do_request(url, request, response, *opts)
+        self._http_caller.do_pb_request(url, request, response, *opts)
         log.debug("[ByteplusSDK][WriteUsers] rsp:\n %s", response)
         return response
 
@@ -36,7 +39,7 @@ class Client(object):
             raise BizException(_TOO_MANY_IMPORT_ITEMS_ERR_MSG)
         url: str = self._retail_url.import_users_url
         response: OperationResponse = OperationResponse()
-        self._http_caller.do_request(url, request, response, *opts)
+        self._http_caller.do_pb_request(url, request, response, *opts)
         log.debug("[ByteplusSDK][ImportUsers] rsp:\n%s", response)
         return response
 
@@ -45,7 +48,7 @@ class Client(object):
             raise BizException(_TOO_MANY_WRITE_ITEMS_ERR_MSG)
         url: str = self._retail_url.write_products_url
         response: WriteProductsResponse = WriteProductsResponse()
-        self._http_caller.do_request(url, request, response, *opts)
+        self._http_caller.do_pb_request(url, request, response, *opts)
         log.debug("[ByteplusSDK][WriteProducts] rsp:\n %s", response)
         return response
 
@@ -54,7 +57,7 @@ class Client(object):
             raise BizException(_TOO_MANY_IMPORT_ITEMS_ERR_MSG)
         url: str = self._retail_url.import_products_url
         response: OperationResponse = OperationResponse()
-        self._http_caller.do_request(url, request, response, *opts)
+        self._http_caller.do_pb_request(url, request, response, *opts)
         log.debug("[ByteplusSDK][ImportProducts] rsp:\n%s", response)
         return response
 
@@ -63,7 +66,7 @@ class Client(object):
             raise BizException(_TOO_MANY_WRITE_ITEMS_ERR_MSG)
         url: str = self._retail_url.write_user_events_url
         response: WriteUserEventsResponse = WriteUserEventsResponse()
-        self._http_caller.do_request(url, request, response, *opts)
+        self._http_caller.do_pb_request(url, request, response, *opts)
         log.debug("[ByteplusSDK][WriteUserEvents] rsp:\n %s", response)
         return response
 
@@ -72,29 +75,15 @@ class Client(object):
             raise BizException(_TOO_MANY_IMPORT_ITEMS_ERR_MSG)
         url: str = self._retail_url.import_user_events_url
         response: OperationResponse = OperationResponse()
-        self._http_caller.do_request(url, request, response, *opts)
+        self._http_caller.do_pb_request(url, request, response, *opts)
         log.debug("[ByteplusSDK][ImportUserEvents] rsp:\n%s", response)
-        return response
-
-    def get_operation(self, request: GetOperationRequest, *opts: Option) -> OperationResponse:
-        url: str = self._retail_url.get_operation_url
-        response: OperationResponse = OperationResponse()
-        self._http_caller.do_request(url, request, response, *opts)
-        log.debug("[ByteplusSDK][GetOperations] rsp:\n%s", response)
-        return response
-
-    def list_operations(self, request: ListOperationsRequest, *opts: Option) -> ListOperationsResponse:
-        url: str = self._retail_url.list_operations_url
-        response: ListOperationsResponse = ListOperationsResponse()
-        self._http_caller.do_request(url, request, response, *opts)
-        log.debug("[ByteplusSDK][ListOperations] rsp:\n%s", response)
         return response
 
     def predict(self, request: PredictRequest, scene: str, *opts: Option) -> PredictResponse:
         url_format: str = self._retail_url.predict_url_format
         url: str = url_format.replace("#", scene)
         response: PredictResponse = PredictResponse()
-        self._http_caller.do_request(url, request, response, *opts)
+        self._http_caller.do_pb_request(url, request, response, *opts)
         log.debug("[ByteplusSDK][Predict] rsp:\n%s", response)
         return response
 
@@ -102,7 +91,7 @@ class Client(object):
                                *opts: Option) -> AckServerImpressionsResponse:
         url: str = self._retail_url.ack_impression_url
         response: AckServerImpressionsResponse = AckServerImpressionsResponse()
-        self._http_caller.do_request(url, request, response, *opts)
+        self._http_caller.do_pb_request(url, request, response, *opts)
         log.debug("[ByteplusSDK][AckImpressions] rsp:\n%s", response)
         return response
 
