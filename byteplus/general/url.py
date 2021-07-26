@@ -11,11 +11,11 @@ _CALLBACK_URL_FORMAT = "{}://{}/predict/api/{}/callback"
 
 # The URL format of data uploading
 # Example: https://tob.sgsnssdk.com/data/api/general_demo/user?method=write
-_UPLOAD_URL_FORMAT = "{}://{}/data/api/{}/{}?method={}"
+_UPLOAD_URL_FORMAT = "{}://{}/data/api/{}/#?method={}"
 
 # The URL format of marking a whole day data has been imported completely
 # Example: https://tob.sgsnssdk.com/predict/api/general_demo/done?topic=user
-_DONE_URL_FORMAT = "{}://{}/predict/api/{}/done?topic=#"
+_DONE_URL_FORMAT = "{}://{}/data/api/{}/done?topic=#"
 
 
 class _GeneralURL(CommonURL):
@@ -47,9 +47,9 @@ class _GeneralURL(CommonURL):
         super().refresh(host)
         self.predict_url_format: str = self._generate_predict_url(host)
         self.callback_url: str = self._generate_callback_url(host)
-        self.write_data_url_format: str = self._generate_upload_url(host, "user", "write")
-        self.import_data_url_format: str = self._generate_upload_url(host, "user", "import")
-        self.done_url_format: str = self._generate_upload_url(host, "product", "write")
+        self.write_data_url_format: str = self._generate_upload_url(host, "write")
+        self.import_data_url_format: str = self._generate_upload_url(host, "import")
+        self.done_url_format: str = self._generate_done_url(host)
 
     def _generate_predict_url(self, host) -> str:
         return _PREDICT_URL_FORMAT.format(self.schema, host, self.tenant)
@@ -57,8 +57,8 @@ class _GeneralURL(CommonURL):
     def _generate_callback_url(self, host) -> str:
         return _CALLBACK_URL_FORMAT.format(self.schema, host, self.tenant)
 
-    def _generate_upload_url(self, host, topic, method) -> str:
-        return _UPLOAD_URL_FORMAT.format(self.schema, host, self.tenant, topic, method)
+    def _generate_upload_url(self, host, method) -> str:
+        return _UPLOAD_URL_FORMAT.format(self.schema, host, self.tenant, method)
 
     def _generate_done_url(self, host) -> str:
         return _DONE_URL_FORMAT.format(self.schema, host, self.tenant)
